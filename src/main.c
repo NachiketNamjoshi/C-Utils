@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 
 		int i=0;
 		char *file_path=argv[1];
-		char *command = "stat -c \"%U %G\" ";
+		char *command = "stat -c \"%n: %U-%G\" ";
 		char *tmp = calloc(sizeof(file_path)+sizeof(command),sizeof(char));
 		while(*command){
       		tmp[i++]=*command++;
