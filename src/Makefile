@@ -3,3 +3,6 @@ all:
 
 install:
 	cp whosyourdaddy.o /bin/whosyodaddy
+
+clean:
+	rm -rf *.o
