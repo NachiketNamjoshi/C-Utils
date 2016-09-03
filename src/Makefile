@@ -1,8 +1,8 @@
 all:
-	gcc main.c -o whosyourdaddy.o
+	(cd whosyodaddy; make whosyodaddy)
 
 install:
-	cp whosyourdaddy.o /bin/whosyodaddy
+	(cd whosyodaddy; make install)
 
 clean:
-	rm -rf *.o
+	(cd whosyodaddy; make clean)
