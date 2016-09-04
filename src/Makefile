@@ -1,4 +1,6 @@
-all:
+all: whosyodaddy
+
+whosyodaddy:
 	(cd whosyodaddy; make whosyodaddy)
 
 install:
