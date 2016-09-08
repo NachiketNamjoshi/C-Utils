@@ -1,5 +1,6 @@
 INC_DIR = ../utils
 CFLAGS = -I$(INC_DIR)
+
 whosyodaddy:
 	gcc main.c -o whosyodaddy.o $(CFLAGS)
 

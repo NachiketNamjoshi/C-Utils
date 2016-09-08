@@ -36,11 +36,10 @@ else
 	echo "[*] Directories already exist."
 fi
 
-echo "[*] Compiling$blue whosyodaddy $nocol \n\n"
-make whosyodaddy
-echo -e "\n\nDo You want to install? (0/1): "
+echo "\n\nDo You want to install$blue whosyodaddy$nocol? (0/1): "
 read inst_ch
 if [ $inst_ch -eq 0 ]; then
+	cd whosyodaddy; make
 	echo ":: All binaries have been compiled. run $red'make install'$nocol to install them.\n"
 	exit
 else if [ $inst_ch -eq 1 ]; then
