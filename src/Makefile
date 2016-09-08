@@ -1,4 +1,5 @@
-all: whosyodaddy
+all:
+	$(whosyodaddy)
 
 whosyodaddy:
 	(cd whosyodaddy; make whosyodaddy)

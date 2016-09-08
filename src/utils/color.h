@@ -20,7 +20,7 @@
 // End Color Definitions
 
 enum Colors {
-	BOLD,
+	BOLD_TEXT,
 	BLACK_TEXT,
 	RED_TEXT,
 	GREEN_TEXT,
@@ -28,7 +28,8 @@ enum Colors {
 	BLUE_TEXT,
 	MAGENTA_TEXT,
 	CYAN_TEXT,
-	WHITE_TEXT
+	WHITE_TEXT,
+    REGULAR_TEXT
 };
 
 void colored_printer(FILE *stream, enum Colors color, const char *fmt, ...) {
@@ -54,7 +55,7 @@ void colored_printer(FILE *stream, enum Colors color, const char *fmt, ...) {
         fprintf(stream, "\033[0m");
         break;
 
-    case BOLD:
+    case BOLD_TEXT:
         fprintf(stream, "\033[1m");
         va_start(vaList, fmt);
         vfprintf(stream, fmt, vaList);
@@ -112,6 +113,14 @@ void colored_printer(FILE *stream, enum Colors color, const char *fmt, ...) {
 
 	case WHITE_TEXT:
         fprintf(stream, "\033[37;1m");
+        va_start(vaList, fmt);
+        vfprintf(stream, fmt, vaList);
+        va_end(vaList);
+        fprintf(stream, "\033[0m");
+        break;
+
+    case REGULAR_TEXT:
+        fprintf(stream, "\033[0m");
         va_start(vaList, fmt);
         vfprintf(stream, fmt, vaList);
         va_end(vaList);
